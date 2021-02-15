@@ -49,5 +49,37 @@ public class CalculadoraTest {
 		assertThrows(ArithmeticException.class,
 				() -> calc.divisao(8, 0));
 	}
-
+	
+	@DisplayName("Testa a multiplicação de dois números")
+	@Test
+	public void testMultiplicacaoDoisNumeros() {
+		int multiplicacao = calc.multiplicacao(3, 4);
+		assertTrue(multiplicacao == 12);
+	}
+	
+	@DisplayName("Testa a somatoria")
+	@Test
+	public void testSomatoria() {
+		int somatoria = calc.somatoria(4);
+		assertTrue(somatoria == 10);
+	}
+	
+	@DisplayName("Testa se o numero é positivo")
+	@Test
+	public void testEhPositivo() {
+		boolean ehPositivo = calc.ehPositivo(10);
+		assertTrue(ehPositivo);
+	}
+	
+	@DisplayName("Testa a comparacao entre dois numeros")
+	@Test
+	public void testComparaDoisNumeros() {
+		int compara1  = calc.compara(4,4);
+		assertTrue(compara1==0);
+		int compara2  = calc.compara(4,3);
+		assertTrue(compara2== 1);
+		int compara3  = calc.compara(3,4);
+		assertTrue(compara3== -1);	
+	
+	}
 }
